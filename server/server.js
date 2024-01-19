@@ -25,7 +25,10 @@ app.use(
   })
 );
 const PORT = 3000;
-
+/********************************************************************* */
+app.get("/", (req, res) => {
+  res.send("Connection was made successfully");
+});
 /********************************************************************* */
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
