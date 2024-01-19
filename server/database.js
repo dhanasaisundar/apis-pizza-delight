@@ -5,7 +5,7 @@ dotenv.config();
 const pool = mysql
   .createPool({
     host: process.env.MYSQL_HOST,
-    port:process.env.MYSQL_PORT,
+    port: process.env.MYSQL_PORT,
     user: process.env.MYSQL_USER,
     password: process.env.MYSQL_PASSWORD,
     database: process.env.MYSQL_DATABASE,
@@ -15,7 +15,7 @@ const pool = mysql
 /* ****************************************************************** */
 export async function getUser(username) {
   const [user] = await pool.query(
-    `SELECT * FROM USERS WHERE name="${username}"`
+    `SELECT * FROM users WHERE name="${username}"`
   );
   return user[0];
 }
